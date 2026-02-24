@@ -1,0 +1,11 @@
+# Excluir pastas de upload e imagens sensíveis
+uploads/
+img/anderson-idealizador.png
+
+# Excluir arquivos de configuração locais
+admin/config.php
+
+# Excluir arquivos temporários e do sistema
+.DS_Store
+Thumbs.db
+*.log

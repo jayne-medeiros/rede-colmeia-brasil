@@ -1,0 +1,1105 @@
+/* === ESTILOS GLOBAIS === */
+
+/* Cores mais vibrantes */
+:root {
+    --cor-mel-principal: #FFC107; /* Amarelo-âmbar mais vibrante */
+    --cor-mel-escuro: #E0A800;    /* Um tom mais escuro para hover */
+    --cor-texto-escuro: #333;
+    --cor-texto-claro: #555;
+    --cor-fundo: #ffffff;
+    --cor-fundo-claro: #f9f9f9;
+}
+
+body {
+    font-family: Arial, sans-serif; /* Define uma fonte padrão */
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--cor-texto-claro);
+}
+
+/* Estilo global para todos os títulos */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: var(--cor-texto-escuro);
+}
+
+
+/* === ESTILO DO CABEÇALHO (HEADER) === */
+header {
+    background-color: #ffffff; /* Fundo branco */
+    padding: 10px 0; /* Menos preenchimento vertical */
+    border-bottom: 1px solid #eee; /* Linha de divisão mais sutil */
+
+    /* Efeito "Sticky" (Grudento) */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Garante que ele fique acima de todo o conteúdo */
+
+    /* Sombra sutil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo para a Imagem da Logo (TAMANHO AJUSTADO) */
+header .logo img {
+    height: 90px; /* Sua altura preferida */
+    max-width: 220px; 
+    vertical-align: middle; 
+    margin-right: 20px; 
+}
+
+/* Ajuste para o header quando a logo é uma imagem */
+header nav {
+    display: flex; /* Para alinhar a logo e o menu lado a lado */
+    justify-content: space-between; /* Espaço entre logo e menu */
+    align-items: center; /* Alinha verticalmente */
+    max-width: 1200px; /* Limita a largura do nav */
+    margin: 0 auto; /* Centraliza o nav */
+    padding: 0 20px; /* Espaçamento lateral */
+}
+
+/* Ajuste para o menu ul dentro do nav */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Remove margem padrão */
+}
+
+header nav ul li {
+    display: inline;
+    margin-left: 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--cor-texto-claro);
+    font-weight: bold;
+}
+
+/* Estilo da Seção Hero (Banner) - AGORA COM IMAGEM DE FUNDO */
+.hero {
+    /* Mudei para .jpeg como você indicou */
+    background-image: url('../img/banner-mel-cremoso.jpeg'); 
+    
+    background-size: cover; /* Faz a imagem cobrir toda a seção */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    
+    padding: 120px 20px; /* Mais espaço para a imagem "respirar" */
+    text-align: center;
+    position: relative; /* Necessário para o truque do overlay */
+}
+/* Adiciona um "filtro" escuro sobre a imagem para o texto branco ficar legível */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Overlay escuro de 40% */
+    z-index: 1; /* Fica acima do fundo, mas abaixo do conteúdo */
+}
+
+/* Conteúdo do Hero (texto e botões) */
+.hero-content {
+    position: relative; /* Posição relativa */
+    z-index: 2; /* Garante que o conteúdo fique ACIMA do overlay */
+}
+
+.hero h1 {
+    font-size: 48px;
+    color: #fff; /* <<< MUDAMOS A COR PARA BRANCO */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra para legibilidade */
+}
+
+.hero .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    margin: 10px;
+    background-color: var(--cor-mel-principal); /* COR ATUALIZADA */
+    color: var(--cor-texto-escuro);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+
+/* === ESTILO DO RODAPÉ (FOOTER) - VERSÃO SUPER COMPACTA === */
+footer {
+    background-color: #333;
+    color: #aaa;
+    padding-top: 20px; /* <<< BEM REDUZIDO */
+    padding-bottom: 15px; /* Adicionado um padding inferior pequeno */
+    margin-top: 30px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+/* Coluna da Logo */
+.footer-logo img {
+    height: 40px; /* <<< REDUZIDO */
+    width: auto;
+    margin-bottom: 8px; /* <<< REDUZIDO */
+}
+
+.footer-logo p {
+    font-size: 14px;
+    line-height: 1.5;
+    max-width: 300px;
+    margin-top: 0; /* Remove margem */
+}
+
+/* Coluna Social */
+.footer-social {
+    max-width: 250px;
+}
+
+.footer-social h4 {
+    font-size: 16px;
+    color: #ffffff;
+    margin-top: 0; /* Remove margem */
+    margin-bottom: 10px; /* <<< REDUZIDO */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.social-links-footer a {
+    display: inline-block;
+    font-size: 22px;
+    color: #ffffff;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links-footer a:hover {
+    color: var(--cor-mel-principal);
+    transform: translateY(-3px);
+}
+
+/* Barra de Copyright */
+.footer-copyright {
+    text-align: center;
+    padding: 15px 20px 0 20px; /* <<< REMOVIDO PADDING INFERIOR */
+    margin-top: 20px; /* <<< REDUZIDO */
+    border-top: 1px solid #444;
+    font-size: 13px;
+    color: #888;
+}
+
+.footer-copyright p {
+    margin: 0;
+    margin-bottom: 5px; /* Espaço mínimo entre as linhas */
+}
+
+/* Estilo dos créditos no rodapé */
+.lumio-credit {
+    font-size: 13px;
+    color: #888;
+    margin-top: 5px; /* <<< REDUZIDO */
+    margin-bottom: 0; /* Remove margem */
+}
+
+.lumio-credit a {
+    color: #aaa;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.lumio-credit a:hover {
+    color: var(--cor-mel-principal);
+}
+
+
+/* === ESTILOS DA PÁGINA QUEM SOMOS === */
+
+/* Título da Página */
+.page-title {
+    background-color: var(--cor-fundo-claro);
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.page-title h1 {
+    color: var(--cor-texto-escuro);
+    margin: 0;
+}
+
+/* Seção de Impacto */
+.impacto {
+    background-color: var(--cor-mel-principal); /* COR ATUALIZADA */
+    color: var(--cor-texto-escuro);
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.impacto h2 {
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+.impacto-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Permite que os cards quebrem em telas menores */
+}
+
+.impacto-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    min-width: 200px;
+}
+
+.impacto-card h3 {
+    font-size: 36px;
+    color: var(--cor-mel-principal); /* COR ATUALIZADA */
+    margin: 0 0 10px 0;
+}
+
+.impacto-card p {
+    font-size: 16px;
+    color: var(--cor-texto-claro);
+    margin: 0;
+}
+/* === ESTILOS DA SEÇÃO IDEALIZADOR === */
+.idealizador-section {
+    background-color: var(--cor-fundo-claro); /* Fundo suave #f9f9f9 */
+    padding: 60px 20px;
+    text-align: center; /* Centraliza todo o conteúdo */
+}
+
+.idealizador-content {
+    max-width: 700px; /* Limita a largura do conteúdo */
+    margin: 0 auto; /* Centraliza o bloco do conteúdo */
+}
+
+.idealizador-foto {
+    width: 250px;  /* Aumentei um pouco o tamanho do círculo */
+    height: 250px; /* Para dar mais espaço para o rosto */
+    border-radius: 50%; /* Faz o recorte redondo! */
+    object-fit: cover; /* Continua preenchendo */
+    object-position: top center; /* <<< NOVA LINHA: Foca no topo e centro da imagem */
+    border: 5px solid var(--cor-mel-principal); /* Borda de mel */
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15); /* Sombra suave */
+    margin-bottom: 25px; /* Espaço abaixo da foto */
+}
+
+.idealizador-content h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--cor-texto-escuro);
+}
+
+.idealizador-content p {
+    font-size: 18px;
+    color: var(--cor-texto-claro);
+    line-height: 1.7;
+    max-width: 600px; /* Limita a largura do texto para melhor leitura */
+    margin: 0 auto; /* Centraliza o parágrafo */
+}
+/* === ESTILOS DA PÁGINA DE PRODUTO ÚNICO === */
+
+.single-product-container {
+    display: flex; /* Coloca imagem e detalhes lado a lado */
+    flex-wrap: wrap; /* Quebra em telas pequenas */
+    max-width: 1200px;
+    margin: 0 auto; /* Centraliza */
+    padding: 40px 20px;
+    gap: 40px; /* Espaço entre imagem e texto */
+    align-items: flex-start; /* Alinha os itens no topo */
+}
+
+/* Coluna da Imagem */
+.product-image {
+    flex: 1; /* Ocupa metade do espaço */
+    min-width: 300px;
+    position: sticky; /* Efeito "grudento" ao rolar (opcional) */
+    top: 20px; /* Distância do topo ao "grudar" */
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Sombra mais premium */
+    border: 1px solid #eee;
+}
+
+/* Coluna dos Detalhes */
+.product-details {
+    flex: 1; /* Ocupa a outra metade */
+    min-width: 300px;
+}
+
+.product-details h2 {
+    font-size: 36px;
+    color: var(--cor-texto-escuro);
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.product-details p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--cor-texto-claro);
+}
+
+.product-details h3 {
+    font-size: 22px;
+    color: var(--cor-texto-escuro);
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.product-details ul {
+    list-style-type: '✔'; /* Reutilizando o estilo da pág. produtores */
+    padding-left: 20px;
+}
+
+.product-details li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--cor-texto-claro);
+}
+
+/* === ESTILOS DA PÁGINA PRODUTORES (LAYOUT EMPILHADO) === */
+
+.produtor-container {
+    /* Removemos o 'display: flex' */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Bloco dos Benefícios */
+.produtor-beneficios {
+    max-width: 800px; /* Limita a largura do texto (como em 'Quem Somos') */
+    margin: 0 auto 50px auto; /* Centraliza e adiciona espaço abaixo */
+}
+
+.produtor-beneficios h2 {
+    color: var(--cor-texto-escuro);
+    margin-bottom: 15px;
+}
+
+.produtor-beneficios ul {
+    list-style-type: '✔'; /* Ícone de check */
+    padding-left: 20px;
+}
+
+.produtor-beneficios li {
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--cor-texto-claro);
+}
+
+/* Bloco do Formulário */
+.produtor-formulario {
+    max-width: 800px; /* Limita a largura do formulário */
+    margin: 0 auto; /* Centraliza o formulário */
+    background-color: var(--cor-fundo-claro);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.produtor-formulario h2 {
+    color: var(--cor-texto-escuro);
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; 
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--cor-texto-claro);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; 
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 16px;
+}
+
+.form-group textarea {
+    resize: vertical; 
+}
+
+.btn-enviar {
+    display: inline-block;
+    width: 100%; 
+    padding: 15px;
+    background-color: var(--cor-mel-principal);
+    color: var(--cor-texto-escuro);
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background-color: var(--cor-mel-escuro);
+}
+/* === ESTILOS DA PÁGINA CONTATO === */
+
+.contato-container {
+    display: flex;
+    flex-wrap: wrap; 
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+.contato-formulario {
+    flex: 1.5; 
+    min-width: 300px;
+    background-color: var(--cor-fundo-claro);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.contato-info {
+    flex: 1; 
+    min-width: 300px;
+}
+
+.contato-info h2 {
+    color: var(--cor-texto-escuro);
+    margin-top: 0;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 16px;
+    color: var(--cor-texto-claro);
+}
+
+.info-item i {
+    font-size: 20px;
+    color: var(--cor-mel-principal); /* COR ATUALIZADA */
+    width: 40px; 
+    text-align: center;
+    margin-right: 10px;
+}
+
+.contato-info h3 {
+    margin-top: 30px;
+}
+
+.social-links a {
+    font-size: 28px;
+    color: var(--cor-texto-escuro);
+    margin-right: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--cor-mel-principal); /* COR ATUALIZADA */
+}
+
+/* === AJUSTE DE LAYOUT (QUEM SOMOS) === */
+
+/* Garante que o container de texto não seja mais flexível */
+.quem-somos-container {
+    display: block; /* Garante que não é mais 'flex' */
+}
+
+/* Centraliza e limita a largura do texto "Nossa História" */
+.quem-somos-container .texto {
+    max-width: 800px;  /* Limita a largura do texto para leitura */
+    margin: 0 auto;    /* Centraliza o bloco de texto */
+    
+    /* Garantias (caso o código antigo ainda exista) */
+    flex: none; /* Remove a regra 'flex: 2' se ela existir */
+    width: auto; /* Deixa a largura ser automática (antes de ser limitada pelo max-width) */
+    min-width: 0; /* Remove o min-width antigo */
+}
+/*
+==================================================================
+=== ESTILOS DE RESPONSIVIDADE (MOBILE) ===
+==================================================================
+*/
+
+/* O 'max-width: 768px' significa "aplicar estas regras em telas 
+   com 768px de largura ou menos" (tablets e celulares) */
+
+@media (max-width: 768px) {
+
+    /* --- AJUSTES GERAIS --- */
+    section {
+        padding: 40px 20px; /* Menos espaçamento */
+    }
+
+    /* --- CABEÇALHO E MENU HAMBÚRGUER --- */
+    header nav {
+        padding: 0 15px; /* Menos espaçamento lateral no mobile */
+    }
+
+    header .logo img {
+        height: 60px; /* Logo menor no celular */
+    }
+    
+    /* Esconde o menu de links normal */
+    header nav ul {
+        display: none; /* Escondido por padrão */
+        
+        /* Transforma em menu vertical */
+        position: absolute;
+        top: 81px; /* Altura exata do seu header (90px logo + 10px padding) */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column; /* Empilha os links */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    
+    /* Mostra o menu quando ele tem a classe "active" (que o JS adiciona) */
+    header nav ul.active {
+        display: flex;
+    }
+
+    header nav ul li {
+        display: block; /* Links em bloco */
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 18px; /* Área de clique maior */
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    /* --- O BOTÃO HAMBÚRGUER --- */
+    .menu-toggle {
+        display: flex; /* Mostra o botão hambúrguer */
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 24px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+    }
+    
+    .menu-toggle .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--cor-texto-escuro);
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+    
+    /* Animação do botão para "X" */
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+    }
+
+    /* --- SEÇÃO HERO --- */
+    .hero {
+        padding: 80px 20px;
+    }
+    .hero h1 {
+        font-size: 36px; /* Fonte menor */
+    }
+    
+    /* --- PÁGINA "QUEM SOMOS" --- */
+    .idealizador-foto {
+        width: 200px;
+        height: 200px;
+    }
+    
+    /* --- PÁGINA "PRODUTOS" (Já é flex-wrap, mas garantindo) --- */
+    .single-product-container {
+        flex-direction: column; /* Força empilhamento */
+    }
+    .product-image {
+        position: static; /* Remove o "sticky" no mobile */
+    }
+    
+    /* --- PÁGINA "CONTATO" (Já é flex-wrap) --- */
+    .contato-container {
+        flex-direction: column;
+    }
+}
+/* === ESTILOS DA PÁGINA FORMAÇÃO TÉCNICA === */
+.workshop-header {
+    background-color: var(--cor-texto-escuro); /* Fundo escuro */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.workshop-header h2 {
+    color: var(--cor-mel-principal); /* Título em cor de mel */
+    font-size: 32px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.workshop-header p {
+    font-size: 18px;
+    color: #ccc;
+    margin: 0;
+}
+
+.video-card-workshop h3 {
+    padding: 15px 20px 0;
+    margin: 0;
+    font-size: 20px;
+}
+
+.video-card-workshop .video-meta {
+    padding: 0 20px 20px;
+    margin: 0;
+    font-size: 14px;
+    color: #777;
+}
+
+/* Reutilizando o truque de responsividade do vídeo 16:9 */
+.video-embed-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    margin-bottom: 10px;
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Seção Certificado */
+.certificado-section {
+    background-color: var(--cor-mel-principal);
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--cor-texto-escuro);
+}
+
+.certificado-section h2 {
+    color: var(--cor-texto-escuro);
+    margin-top: 0;
+}
+
+/* --- RESPONSIVIDADE PARA CELULAR (Ajustes) --- */
+@media (max-width: 768px) {
+    .video-grid-workshop {
+        grid-template-columns: 1fr; /* 1 coluna no celular */
+        gap: 20px;
+    }
+    .workshop-header h2 {
+        font-size: 24px;
+    }
+}
+/* === ESTILOS DO CURSO SEQUENCIAL (NOVO VISUAL) === */
+
+.course-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+.course-video-player {
+    flex: 2; /* Coluna do vídeo é maior */
+    min-width: 300px;
+}
+
+.course-modules {
+    flex: 1; /* Coluna dos módulos é menor */
+    min-width: 250px;
+}
+
+.course-modules h2 {
+    font-size: 24px;
+    margin-top: 0;
+    color: var(--cor-texto-escuro);
+}
+
+#module-list {
+    list-style: none;
+    padding: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Sombra na lista inteira */
+}
+
+.module-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    color: var(--cor-texto-escuro);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    background-color: #f7f7f7; /* Fundo levemente cinza */
+    transition: all 0.2s ease-in-out;
+}
+.module-item:last-child {
+    border-bottom: none;
+}
+
+/* 1. ESTILO PARA AULAS BLOQUEADAS (LOCKED) */
+.module-item.locked {
+    background-color: #fcfcfc;
+    color: #999;
+    cursor: not-allowed;
+    font-style: italic;
+}
+
+.module-item.locked:hover {
+    background-color: #fcfcfc;
+}
+
+/* 2. ESTILO PARA AULAS ATIVAS (AULA SENDO ASSISTIDA) */
+.module-item.active {
+    background-color: var(--cor-mel-principal);
+    color: var(--cor-texto-escuro);
+    font-weight: bold;
+    box-shadow: inset 3px 0 0 var(--cor-texto-escuro); /* Linha lateral */
+}
+
+/* 3. ESTILO PARA AULAS DESBLOQUEADAS (UNLOCKED) */
+.module-item.unlocked {
+    background-color: #fff;
+}
+.module-item.unlocked:hover {
+    background-color: #fffbe6; /* Amarelo clarinho no hover */
+    transform: translateX(3px); /* Efeito sutil de deslize */
+}
+
+/* ÍCONES DE STATUS */
+.status-icon {
+    font-size: 18px;
+}
+
+.module-item.locked .status-icon i {
+    color: #ccc; /* Cadeado cinza claro */
+}
+
+.module-item.unlocked .status-icon i,
+.module-item.active .status-icon i {
+    color: var(--cor-mel-principal); /* Play/Check em cor de mel */
+}
+
+.module-item.active .status-icon i {
+    color: var(--cor-texto-escuro); /* Ícone preto na aula ativa */
+}
+
+/* --- RESPONSIVIDADE PARA CELULAR --- */
+@media (max-width: 900px) {
+    .course-container {
+        flex-direction: column; /* Pilha vertical no celular */
+    }
+}
+/* === ESTILOS PARA BOTÕES DE AÇÃO (CURSO) === */
+
+.btn-action-course {
+    display: inline-block;
+    width: auto;
+    padding: 15px 30px;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Sombra mais destacada */
+    transition: all 0.3s ease-in-out;
+}
+
+/* 1. Botão "Acesse o Site Oficial do Curso" (Hotmart) */
+.btn-hotmart {
+    /* Usando a cor escura para contraste e profissionalismo */
+    background-color: var(--cor-texto-escuro); 
+    color: #fff !important;
+}
+
+.btn-hotmart:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+.btn-hotmart:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* 2. Botão "Solicitar Certificado" */
+.btn-certificado {
+    /* Usando a cor principal de mel */
+    background-color: var(--cor-mel-principal);
+    color: var(--cor-texto-escuro) !important;
+}
+
+.btn-certificado:hover {
+    background-color: var(--cor-mel-escuro);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+.btn-certificado:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+/* === ESTILOS ESPECÍFICOS PARA O CARD DO INSTAGRAM === */
+#instagram-card {
+    background-color: #fff; /* Fundo branco para o card */
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+#instagram-card::before {
+    content: "\f16d"; /* Ícone do Instagram (Font Awesome) */
+    font-family: "Font Awesome 5 Brands"; /* Garante que a fonte do ícone seja carregada */
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 150px; /* Tamanho grande */
+    color: rgba(200, 200, 200, 0.1); /* Transparência sutil */
+    z-index: 0;
+    transform: rotate(15deg);
+}
+
+#instagram-card h3 {
+    color: var(--cor-texto-escuro);
+    font-size: 22px;
+    margin-bottom: 15px;
+    position: relative; /* Para ficar acima do ícone de fundo */
+    z-index: 1;
+}
+
+#instagram-card h3 i { /* Estilo para o ícone do Instagram no título */
+    color: #E1306C; /* Cor oficial do Instagram */
+    margin-right: 10px;
+}
+
+#instagram-card h4 {
+    color: var(--cor-mel-principal);
+    font-size: 20px;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+#instagram-card p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+/* --- NOVOS ESTILOS PARA PROGRESSÃO E BOTÃO --- */
+
+/* Estilo para o Botão de Próxima Aula */
+.btn-next-lesson {
+    background-color: #3871D5 !important; /* Azul para destaque */
+    color: #fff !important;
+    width: 100% !important;
+    margin-top: 20px !important;
+}
+.btn-next-lesson:hover {
+    background-color: #2c59a3 !important;
+    transform: translateY(-2px);
+}
+
+/* ESTILO PARA AULAS CONCLUÍDAS */
+.module-item.completed {
+    background-color: #e6f7e9; /* Verde bem clarinho */
+    color: #1e8449; /* Texto verde escuro */
+    font-style: normal;
+    cursor: default;
+    box-shadow: inset 3px 0 0 #1e8449;
+}
+
+.module-item.completed .status-icon i {
+    color: #1e8449 !important; /* Ícone de check em verde */
+}
+
+.module-item.completed:hover {
+    background-color: #e6f7e9;
+    transform: none;
+}
+/* === ESTILOS PARA LISTA SIMPLES DE EVENTOS (NOVO) === */
+.event-list-section {
+    max-width: 900px; /* Largura ideal para leitura */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.event-list-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    background-color: var(--cor-fundo);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+}
+
+.event-list-item:hover {
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.event-list-item h3 {
+    font-size: 24px;
+    color: var(--cor-mel-principal); /* Destaque em cor de mel */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.event-list-item p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--cor-texto-claro);
+    margin-bottom: 20px;
+}
+
+/* === CORREÇÃO DO TAMANHO DOS BOTÕES NA LISTA DE EVENTOS === */
+.event-list-item a.btn-small {
+    /* Força os tamanhos menores com !important para evitar conflitos */
+    padding: 8px 15px !important;
+    font-size: 14px !important;
+    width: auto !important;
+    margin: 5px 0 0 0 !important; /* Ajusta margem para a lista */
+    display: inline-block;
+}
+
+/* Ajuste de responsividade */
+@media (max-width: 768px) {
+    .event-list-item h3 {
+        font-size: 20px;
+    }
+    .event-list-section {
+        padding: 0 10px;
+    }
+}
+
+/* === ESTILOS DO MODAL DE IMAGEM (ZOOM) === */
+
+/* A janela de fundo (background) */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed; 
+    z-index: 2000; /* Fica acima de tudo */
+    padding-top: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); /* Preto com transparência */
+    cursor: zoom-out; /* Indica que clicar fecha */
+}
+
+/* A imagem dentro do modal */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 900px; /* Tamanho máximo */
+    max-height: 90vh; /* Altura máxima */
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+/* Efeito de Zoom ao abrir */
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* O botão de fechar (X) */
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--cor-mel-principal);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Efeito na miniatura do produto */
+.zoomable-image:hover {
+    opacity: 0.9;
+    transform: scale(1.05); /* Leve zoom ao passar o mouse */
+}
+
+/* Responsividade para celular */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 95%;
+    }
+}

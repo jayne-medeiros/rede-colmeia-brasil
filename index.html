@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rede Colmeia Brasil - Transformando a apicultura no Brasil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXXXX-X"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-XXXXXXXXX-X');
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="img/logo-rede-colmeia.png" alt="Logo Rede Colmeia Brasil">
+            </a>
+            <ul>
+                <li><a href="quem-somos.html">Quem Somos</a></li>
+                <li><a href="produtos.php">Produtos Gourmet</a></li>
+                <li><a href="produtores.php">Seja um Produtor</a></li>
+                <li><a href="eventos.php">Eventos</a></li>
+                <li><a href="formacao-tecnica.html">Formação Técnica</a></li>
+                <li><a href="contato.php">Contato</a></li>
+            </ul>
+            <button class="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Transformando a apicultura no Brasil</h1>
+                <div>
+                    <a href="quem-somos.html" class="btn">Conheça a Rede Colmeia</a>
+                    <a href="produtos.php" class="btn">Explore nossos produtos</a>
+                    <a href="produtores.php" class="btn">Seja um produtor parceiro</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col footer-logo">
+                <a href="index.html">
+                    <img src="img/logo-rede-colmeia.png" alt="Logo Rede Colmeia Brasil">
+                </a>
+                <p>Transformando a apicultura no Brasil. Conectando produtores e apaixonados por abelhas.</p>
+            </div>
+            <div class="footer-col footer-social">
+                <h4>Siga-nos</h4>
+                <div class="social-links-footer">
+                    <a href="https://www.instagram.com/redecolmeiabr/" target="_blank" title="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>Rede Colmeia Brasil &copy; 2025</p>
+            <p class="lumio-credit">Desenvolvido com &hearts; por Lumiô Lab</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // SENSOR LUMIÔ - Contabiliza acesso
+        // Mude o nome abaixo para o nome EXATO da tecnologia deste site
+        const nomeDestaTecnologia = "Rede Colmeia";
+
+        fetch(`https://hlumio.com/tracker.php?tech=${encodeURIComponent(nomeDestaTecnologia)}`)
+            .then(response => console.log("Acesso contabilizado no Hub."))
+            .catch(error => console.error("Erro na telemetria."));
+    </script>
+</body>
+
+</html>
