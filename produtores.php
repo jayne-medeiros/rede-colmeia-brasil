@@ -9,7 +9,7 @@ $host = DB_HOST;
 $db   = DB_NAME;
 $user = DB_USER;
 $pass = DB_PASS;
-$email_dono = 'EMAIL_DESTINO_HERE'; // E-mail que receberá o aviso
+$email_dono = EMAIL_DESTINO; // E-mail que receberá o aviso
 
 $mensagem_status = '';
 
