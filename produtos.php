@@ -1,9 +1,10 @@
 <?php
-// --- CONFIGURAÇÕES DE CONEXÃO ---
-$host = 'localhost';
-$db   = 'u599217201_rede_colmeia';      // <--- Substitua aqui
-$user = 'u599217201_rede_colmeia';   // <--- Substitua aqui
-$pass = 'SENHA_DO_BANCO';     // <--- Substitua aqui
+// --- CONFIGURAÇÕES DE CONEXÃO (via admin/config.php) ---
+require_once __DIR__ . '/admin/config.php';
+$host = DB_HOST;
+$db   = DB_NAME;
+$user = DB_USER;
+$pass = DB_PASS;
 
 $produtos = [];
 
