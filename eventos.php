@@ -43,12 +43,13 @@
 
         <section class="event-list-section">
             <?php
-            // ** 1. CONFIGURAÇÕES DO BANCO DE DADOS (SUBSTITUA AQUI!) **
-            $host = 'localhost'; 
-            $db   = 'u599217201_rede_colmeia'; 
-            $user = 'u599217201_rede_colmeia'; 
-            $pass = 'SENHA_DO_BANCO'; 
-            $charset = 'utf8mb4';
+            // ** 1. CONFIGURAÇÕES DO BANCO DE DADOS (via admin/config.php) **
+            require_once __DIR__ . '/admin/config.php';
+            $host = DB_HOST;
+            $db   = DB_NAME;
+            $user = DB_USER;
+            $pass = DB_PASS;
+            $charset = DB_CHARSET;
 
             $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
             $options = [
