@@ -142,6 +142,10 @@ try {
                 <a href="https://www.instagram.com/redecolmeiabr/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
+            <div class="footer-col footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone"></i> +55 83 9950-2326</p>
+            </div>
         </div>
         <div class="footer-copyright">
             <p>Rede Colmeia Brasil &copy; 2025</p>

@@ -160,7 +160,7 @@ $regiao_val = $_SESSION['produtor_regiao'] ?? '';
     </main>
     
     <footer>
-        <div class="footer-copyright"><p>Rede Colmeia Brasil &copy; 2025</p></div>
+        <div class="footer-copyright"><p>Rede Colmeia Brasil &copy; 2025</p><p>Contato: +55 83 9950-2326</p></div>
     </footer>
     <script src="js/main.js"></script>
 </body>

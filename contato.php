@@ -103,26 +103,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <button type="submit" class="btn-enviar">Enviar Mensagem</button>
                 </form>
             </div>
-
-            <div class="contato-info">
-                <h2>Nossos Canais</h2>
-                <p>Você também pode nos encontrar em nossas redes sociais ou pelo nosso telefone.</p>
-                
-                <div class="info-item">
-                    <i class="fas fa-envelope"></i>
-                    <span>EMAIL_SISTEMA_HERE</span>
-                </div>
-                
-                <div class="info-item">
-                    <i class="fas fa-phone"></i>
-                    <span>(XX) XXXXX-XXXX</span> 
-                </div>
-
-                <h3>Siga-nos:</h3>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/redecolmeiabr/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
         </section>
     </main>
 
@@ -139,6 +119,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="social-links-footer">
                 <a href="https://www.instagram.com/redecolmeiabr/" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
+            </div>
+            <div class="footer-col footer-contact">
+                <h4>Contato</h4>
+                <p><i class="fas fa-phone"></i> +55 83 9950-2326</p>
             </div>
         </div>
         <div class="footer-copyright">
