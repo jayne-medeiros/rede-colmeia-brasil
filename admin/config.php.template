@@ -11,4 +11,6 @@ define('DB_CHARSET', 'utf8mb4');
 // Outras configurações (Segurança da Sessão Admin)
 define('ADMIN_USERNAME', 'USUARIO_ADMIN'); 
 define('ADMIN_PASSWORD', 'SENHA_ADMIN'); 
+
+define('EMAIL_DESTINO', 'seu-email@exemplo.com'); // E-mail que recebe contato e cadastros de produtores
 ?>
