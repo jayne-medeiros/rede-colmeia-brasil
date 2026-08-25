@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/admin/config.php';
 // Processamento do Formulário de Contato
 $mensagem_status = '';
 
@@ -9,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $mensagem = $_POST['mensagem_contato'] ?? '';
     
     // E-mail de destino (Dono da Rede Colmeia)
-    $to = 'EMAIL_DESTINO_HERE';
+    $to = EMAIL_DESTINO;
     
     $subject = "Contato do Site: $assunto";
     
